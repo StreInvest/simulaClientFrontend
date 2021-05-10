@@ -9,7 +9,8 @@ import { PostagemService } from 'src/app/services/postagem.service';
 })
 export class PostagemListComponent implements OnInit {
   
-  postagens: Array<Postagem> = []
+  postagens: Array<any> = []
+  pagination: object = {}
 
   constructor(private service: PostagemService) { }
 
@@ -19,16 +20,9 @@ export class PostagemListComponent implements OnInit {
 
   listarTodos(){
     this.service.listarTodos().subscribe((data:any) => {
-      this.postagens = data.data
-      for(let i = 0; i <= (this.postagens.length -1); i++){
-        if(this.postagens[i].body.length >= 200){
-          var bodyer = this.postagens[i].body
-        this.postagens[i].body = bodyer.slice(0, 200) + ' ...'
-        }
-        else {
-          this.postagens[i].body = this.postagens[i].body
-        }
-      }
+     this.postagens = data.response
+     this.pagination = data.paginate
+    console.log(data.response)
     },
     (error)=>{
       this.service.show("Error dados não encontrado!")

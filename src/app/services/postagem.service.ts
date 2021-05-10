@@ -3,14 +3,15 @@ import { Injectable } from '@angular/core';
 
 import { MatSnackBar }  from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
-import { Postagem } from '../models/postagem.model';
+// import { Postagem } from '../models/postagem.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostagemService {
 
-  url = "http://localhost:3000/api/v1/articles"
+  url = "https://streinvestapi.herokuapp.com/investment/fjuhrHbtkje3qUoEqWzo"
+  url_c = "https://streinvestapi.herokuapp.com/consortium/fjuhrHbtkje3qUoEqWzo"
 
   constructor(private snake: MatSnackBar, private http: HttpClient) { }
 
@@ -22,24 +23,13 @@ export class PostagemService {
    })
   }
 
-  create(postagem: Postagem): Observable<Postagem> {
-    return this.http.post<Postagem>(this.url, postagem)
-  }
 
-  listarTodos(): Observable<Postagem[]> {
-    return this.http.get<Postagem[]>(this.url)
+  listarTodos(): Observable<[]> {
+    return this.http.get<[]>(this.url)
   }
-
-  listarEspecifico(id:number): Observable<Postagem[]> {
-    return this.http.get<Postagem[]>(`${this.url}/${id}`)
-  }
-
-  editar( id:number, postagem: Postagem): Observable<Postagem> {
-    return this.http.put<Postagem>(`${this.url}/${id}`, postagem)
-  }
-
-  deletar(id:number): Observable<Postagem>{
-    return this.http.delete<Postagem>(`${this.url}/${id}`)
+  
+  listarTodosConsortium(): Observable<[]> {
+    return this.http.get<[]>(this.url_c)
   }
 
 }

@@ -1,8 +1,9 @@
 .header{
   display: flex;
-  align-items: center;
+  align-items: left;
   background-color: #000;
   color: #fff;
+  justify-content: center;
 }
 .header a{
   display: flex;

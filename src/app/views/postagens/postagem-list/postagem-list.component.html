@@ -1,7 +1,22 @@
-<h3>Lista de postagens</h3>
+<h2>Todos os investimentos</h2>
 
-<mat-card class="card" *ngFor="let post of postagens">
-  <mat-card-title>{{post.title}}</mat-card-title>
-  <mat-card-subtitle>{{post.body}} </mat-card-subtitle>
-  <a [routerLink]="['/postagem/visualizar', post.id]">Visualizar</a>
-</mat-card>
+
+<section class="tecnologia">
+  <div class="box-linguagem ">
+      <div class="box-linguagem-icon">    
+        <mat-card class="box-flex-icon" *ngFor="let inves of postagens">
+          <mat-card-title style="font-size: 15px" >{{inves.investment_name}}</mat-card-title>
+          <h4 >Categoria: {{inves.category}}</h4>
+          <h4 >Risco: {{inves.risk}}</h4>
+          <h4 >Status: {{inves.status}}</h4>
+          <h4 >Dia: {{inves.profitability.day}}</h4>
+          <h4 >Mes: {{inves.profitability.month}}</h4>
+          <h4 >Ano: {{inves.profitability.year}}</h4>
+          <h4 >Consorcio: {{inves.consortium.consortium_name}}</h4>
+          <h4 >data da ultima atualização: {{inves.updated_at}}</h4>
+          
+          <!-- <a [routerLink]="['/postagem/visualizar', post.id]">Visualizar</a> -->
+        </mat-card>
+      </div>
+  </div>   
+</section>
