@@ -1,0 +1,8 @@
+<h3>Postagem</h3>
+
+<mat-card class="card">
+  <mat-card-title>{{this.title}}</mat-card-title>
+  <mat-card-subtitle>{{this.body}}</mat-card-subtitle>
+  <a [routerLink]="['/postagem/editar', id]"  >Editar</a>
+  <button (click)="deletar()" >Remover</button>
+</mat-card>

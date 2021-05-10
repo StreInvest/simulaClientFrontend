@@ -1,0 +1,7 @@
+<h3>Lista de postagens</h3>
+
+<mat-card class="card" *ngFor="let post of postagens">
+  <mat-card-title>{{post.title}}</mat-card-title>
+  <mat-card-subtitle>{{post.body}} </mat-card-subtitle>
+  <a [routerLink]="['/postagem/visualizar', post.id]">Visualizar</a>
+</mat-card>

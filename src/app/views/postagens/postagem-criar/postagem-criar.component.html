@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-title>Nova postagem</mat-card-title>
+  <form >
+    <mat-form-field>
+      <input matInput placeholder="Titulo" [(ngModel)]="postagem.title" name="title" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Corpo da postagem" [(ngModel)]="postagem.body" name="body" required >
+    </mat-form-field>
+  </form>
+  <button mat-raised-button color="primary" (click)="create()">
+    registrar
+  </button>
+  
+  <button mat-raised-button (click)="canc()">
+    Voltar
+  </button>
+</mat-card>
+
+

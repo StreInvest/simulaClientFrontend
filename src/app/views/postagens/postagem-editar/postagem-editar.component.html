@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-title>Atualizar a postagem</mat-card-title>
+  <form >
+    <mat-form-field>
+      <input matInput placeholder="Titulo" [(ngModel)]="title" name="title" required />
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Corpo da postagem" [(ngModel)]="body" name="body" required >
+      </textarea>
+    </mat-form-field>
+  </form>
+  <button style="margin-right: 10px;" color="primary" (click)="editar()">
+    registrar
+  </button>
+  
+  <button routerLink="/postagem" >
+    Voltar
+  </button>
+</mat-card>
+
