@@ -21,11 +21,11 @@ import { HeaderComponent } from './views/components/template/header/header.compo
 import { FooterComponent } from './views/components/template/footer/footer.component';
 import { NavComponent } from './views/components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
-import { PostagemCrudComponent } from './views/postagens/postagem-crud/postagem-crud.component';
-import { PostagemCriarComponent } from './views/postagens/postagem-criar/postagem-criar.component';
-import { PostagemListComponent } from './views/postagens/postagem-list/postagem-list.component';
-import { PostagemVisualizarComponent } from './views/postagens/postagem-visualizar/postagem-visualizar.component';
-import { PostagemEditarComponent } from './views/postagens/postagem-editar/postagem-editar.component';
+// import { PostagemCrudComponent } from './views/postagens/postagem-crud/postagem-crud.component';
+// import { PostagemCriarComponent } from './views/postagens/postagem-criar/postagem-criar.component';
+// import { PostagemListComponent } from './views/postagens/postagem-list/postagem-list.component';
+// import { PostagemVisualizarComponent } from './views/postagens/postagem-visualizar/postagem-visualizar.component';
+// import { PostagemEditarComponent } from './views/postagens/postagem-editar/postagem-editar.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +34,11 @@ import { PostagemEditarComponent } from './views/postagens/postagem-editar/posta
     FooterComponent,
     NavComponent,
     HomeComponent,
-    PostagemCrudComponent,
-    PostagemCriarComponent,
-    PostagemListComponent,
-    PostagemVisualizarComponent,
-    PostagemEditarComponent,
+    // PostagemCrudComponent,
+    // PostagemCriarComponent,
+    // PostagemListComponent,
+    // PostagemVisualizarComponent,
+    // PostagemEditarComponent,
   ],
   imports: [
     BrowserModule,
