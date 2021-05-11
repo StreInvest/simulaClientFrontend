@@ -8,9 +8,10 @@ import { PostagemService } from 'src/app/services/postagem.service';
   styleUrls: ['./postagem-list.component.css']
 })
 export class PostagemListComponent implements OnInit {
-  
+
   postagens: Array<any> = []
   pagination: object = {}
+  risco: string = ''
 
   constructor(private service: PostagemService) { }
 
@@ -18,15 +19,17 @@ export class PostagemListComponent implements OnInit {
     this.listarTodos()
   }
 
-  listarTodos(){
-    this.service.listarTodos().subscribe((data:any) => {
-     this.postagens = data.response
-     this.pagination = data.paginate
-    console.log(data.response)
+  listarTodos() {
+    this.service.listarTodos().subscribe((data: any) => {
+    
+      this.postagens = data.response
+      this.pagination = data.paginate
+      
+
     },
-    (error)=>{
-      this.service.show("Error dados não encontrado!")
-    })
+      (error) => {
+        this.service.show("Error dados não encontrado!")
+      })
   }
 
 }

@@ -1,19 +1,48 @@
-<h2>Todos os investimentos</h2>
+<h1>Todos os investimentos</h1>
 
+<div class="container">
+  <h5>Risco</h5>
+  <div>
+    <span>
+      Safe
+      <i style="background-color: green; color: green;" >....</i>
+    </span>
+    <span>
+      Moderate
+      <i  style="background-color: yellow; color: yellow;" >....</i>
+    </span>
+    <span>
+      Severe
+      <i style="background-color: red; color: red;" >....</i>
+    </span>
+  </div>
+</div>
 
 <section class="tecnologia">
   <div class="box-linguagem ">
       <div class="box-linguagem-icon">    
         <mat-card class="box-flex-icon" *ngFor="let inves of postagens">
-          <mat-card-title style="font-size: 15px" >{{inves.investment_name}}</mat-card-title>
-          <h4 >Categoria: {{inves.category}}</h4>
-          <h4 >Risco: {{inves.risk}}</h4>
-          <h4 >Status: {{inves.status}}</h4>
-          <h4 >Dia: {{inves.profitability.day}}</h4>
-          <h4 >Mes: {{inves.profitability.month}}</h4>
-          <h4 >Ano: {{inves.profitability.year}}</h4>
-          <h4 >Consorcio: {{inves.consortium.consortium_name}}</h4>
-          <h4 >data da ultima atualização: {{inves.updated_at}}</h4>
+            <div *ngIf="inves.risk === 'Safe'" class="category" style="background-color: green;" >
+              <h4 >{{inves.category}}</h4>
+            </div>
+            <div *ngIf="inves.risk === 'Moderate'" class="category" style="background-color: yellow;" >
+              <h4 >{{inves.category}}</h4>
+            </div>
+            <div *ngIf="inves.risk === 'Severe'" class="category" style="background-color: red;" >
+              <h4 >{{inves.category}}</h4>
+            </div>
+          <mat-card-header class="header-mat">
+            <h2 >{{inves.investment_name}}</h2>
+          </mat-card-header>
+          <hr>
+          <div>
+            <h4 >Status: {{inves.status}}</h4>
+            <h4 >Dia: {{inves.profitability.day}}</h4>
+            <h4 >Mes: {{inves.profitability.month}}</h4>
+            <h4 >Ano: {{inves.profitability.year}}</h4>
+            <h4 >Consorcio: {{inves.consortium.consortium_name}}</h4>
+            <h4 >data da ultima atualização: {{inves.updated_at}}</h4>
+          </div>
           
           <!-- <a [routerLink]="['/postagem/visualizar', post.id]">Visualizar</a> -->
         </mat-card>
