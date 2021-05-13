@@ -1,3 +1,7 @@
+*,h1, h2, h3, h4, h5, h6{
+  padding: 0;
+  margin: 0;
+}
 .content{
   display: flex;
   justify-content: center;
@@ -8,7 +12,7 @@
 }
 .box-linguagem{
   width: 100%;
-  margin-top: 70px;
+  margin-top: 30px;
 }
 .box-linguagem-icon {
   display: flex;
@@ -18,18 +22,18 @@
 
 .box-flex-icon {
   background-color: #eee;
-  width: 200px;
-  border-radius: 5px;
+  /* width: 200px; */
+  /* border-radius: 5px; */
   margin: 10px;
-  border-bottom: 10px solid #313131;
+  /* border-bottom: 10px solid #313131; */
 }
 .projetos{
   width: 100%;
-  overflow: hidden;
   background-color: #0c0c0c;
   padding-bottom: 50px;
 }
 .box-projeto{
+  padding-top: 100px;
   width: 100%;
   margin-top: 70px;
 }
@@ -78,6 +82,25 @@ h2{
   margin: 0;
   padding: 0;
 }
+
+.categoryRodape{
+  position: relative;
+  color: #fff;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.categoryRodape h4 {
+  font-size: 12px;
+}
+
+.linformativo{
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+}
 .container{
  background-color: #eee;
  width: 100px; 
@@ -92,4 +115,8 @@ i{
   background-color: black;
   border-radius: 50%;
   font-size: 10px;
+}
+
+.bodyCard{
+  padding: 0 5px;
 }

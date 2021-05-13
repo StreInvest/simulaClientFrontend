@@ -1,22 +1,39 @@
 <h1>Todos os investimentos</h1>
 
-<div class="container">
-  <h5>Risco</h5>
-  <div>
-    <span>
-      Safe
-      <i style="background-color: green; color: green;" >....</i>
-    </span>
-    <span>
-      Moderate
-      <i  style="background-color: yellow; color: yellow;" >....</i>
-    </span>
-    <span>
-      Severe
-      <i style="background-color: red; color: red;" >....</i>
-    </span>
+<div class="linformativo">
+  <div class="container">
+    <h5>Risco</h5>
+    <div>
+      <span>
+        Safe
+        <i style="background-color: green; color: green;" >....</i>
+      </span>
+      <span>
+        Moderate
+        <i  style="background-color: yellow; color: yellow;" >....</i>
+      </span>
+      <span>
+        Severe
+        <i style="background-color: red; color: red;" >....</i>
+      </span>
+    </div>
+  </div>
+  <div class="container">
+    <h5>Status</h5>
+    <div>
+      <span>
+        Aberto
+        <i style="background-color: rgb(2, 2, 2); color: rgb(0, 0, 0);" >....</i>
+      </span>
+      <span>
+        Fechado
+        <i  style="background-color: rgb(255, 255, 255); color: rgb(255, 255, 255);" >....</i>
+      </span>
+    </div>
   </div>
 </div>
+
+
 
 <section class="tecnologia">
   <div class="box-linguagem ">
@@ -35,7 +52,7 @@
             <h2 >{{inves.investment_name}}</h2>
           </mat-card-header>
           <hr>
-          <div>
+          <div class="bodyCard">
             <h4 >Status: {{inves.status}}</h4>
             <h4 >Dia: {{inves.profitability.day}}</h4>
             <h4 >Mes: {{inves.profitability.month}}</h4>
@@ -45,6 +62,12 @@
           </div>
           
           <!-- <a [routerLink]="['/postagem/visualizar', post.id]">Visualizar</a> -->
+          <div *ngIf="inves.status === 'Open'" class="categoryRodape" style="background-color: rgb(0, 0, 0);" >
+            Aberto
+          </div>
+          <div *ngIf="inves.status === 'Close'" class="categoryRodape" style="background-color: rgb(255, 255, 255); color: black;" >
+            <h4 >{{inves.category}}</h4>
+          </div>
         </mat-card>
       </div>
   </div>   
