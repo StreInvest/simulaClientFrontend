@@ -22,6 +22,7 @@ import { FooterComponent } from './views/components/template/footer/footer.compo
 import { NavComponent } from './views/components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { PostagemListComponent } from './views/postagens/postagem-list/postagem-list.component';
+import { InvesSpecificComponent } from './views/inves/inves-specific/inves-specific.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,8 @@ import { PostagemListComponent } from './views/postagens/postagem-list/postagem-
     FooterComponent,
     NavComponent,
     HomeComponent,
-    PostagemListComponent
-   
+    PostagemListComponent,
+    InvesSpecificComponent
   ],
   imports: [
     BrowserModule,

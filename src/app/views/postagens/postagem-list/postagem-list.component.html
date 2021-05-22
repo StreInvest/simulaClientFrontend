@@ -5,15 +5,15 @@
     <h5>Risco</h5>
     <div>
       <span>
-        Safe
+        Baixo Risco
         <i style="background-color: green; color: green;" >....</i>
       </span>
       <span>
-        Moderate
+        Médio Risco
         <i  style="background-color: yellow; color: yellow;" >....</i>
       </span>
       <span>
-        Severe
+        Alto Risco
         <i style="background-color: red; color: red;" >....</i>
       </span>
     </div>
@@ -22,11 +22,11 @@
     <h5>Status</h5>
     <div>
       <span>
-        Aberto
+        Fechado
         <i style="background-color: rgb(2, 2, 2); color: rgb(0, 0, 0);" >....</i>
       </span>
       <span>
-        Fechado
+        Aberto
         <i  style="background-color: rgb(255, 255, 255); color: rgb(255, 255, 255);" >....</i>
       </span>
     </div>
@@ -37,38 +37,49 @@
 
 <section class="tecnologia">
   <div class="box-linguagem ">
-      <div class="box-linguagem-icon">    
-        <mat-card class="box-flex-icon" *ngFor="let inves of postagens">
+      <div class="box-linguagem-icon">
+        <mat-card class="box-flex-icon mat-elevation-z2" *ngFor="let inves of postagens">
+          <div [routerLink]="['/visualizar', inves._id]" >
             <div *ngIf="inves.risk === 'Safe'" class="category" style="background-color: green;" >
               <h4 >{{inves.category}}</h4>
             </div>
             <div *ngIf="inves.risk === 'Moderate'" class="category" style="background-color: yellow;" >
               <h4 >{{inves.category}}</h4>
             </div>
-            <div *ngIf="inves.risk === 'Severe'" class="category" style="background-color: red;" >
+            <div *ngIf="inves.risk === 'Severe'" class="category" style="background-color: red;">
               <h4 >{{inves.category}}</h4>
             </div>
-          <mat-card-header class="header-mat">
-            <h2 >{{inves.investment_name}}</h2>
-          </mat-card-header>
-          <hr>
-          <div class="bodyCard">
-            <h4 >Status: {{inves.status}}</h4>
-            <h4 >Dia: {{inves.profitability.day}}</h4>
-            <h4 >Mes: {{inves.profitability.month}}</h4>
-            <h4 >Ano: {{inves.profitability.year}}</h4>
-            <h4 >Consorcio: {{inves.consortium.consortium_name}}</h4>
-            <h4 >data da ultima atualização: {{inves.updated_at}}</h4>
+            <mat-card-header class="header-mat mat-elevation-z2 elevation-z8">
+              <h2 >{{inves.investment_name}}</h2>
+            </mat-card-header>
+            <div class="bodyCard">
+              <h4 >Dia: {{inves.profitability.day}}</h4>
+              <h4 >Mes: {{inves.profitability.month}}</h4>
+              <h4 >Ano: {{inves.profitability.year}}</h4>
+              <h4 >minimo valor de investimento: {{inves.profitability.minimum_value}}</h4>
+              <h4>
+                data da ultima atualização: 
+                {{inves.updated_at.slice(0,10).split('-').reverse().join('/')+" às "+inves.updated_at.slice(11,19)}}
+              </h4>
+            </div>
           </div>
           
-          <!-- <a [routerLink]="['/postagem/visualizar', post.id]">Visualizar</a> -->
-          <div *ngIf="inves.status === 'Open'" class="categoryRodape" style="background-color: rgb(0, 0, 0);" >
-            Aberto
+          <div 
+            *ngIf="inves.status === 'Open'" 
+            class="categoryRodape" 
+            style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" 
+          >
+          {{inves.consortium.consortium_name}}
           </div>
-          <div *ngIf="inves.status === 'Close'" class="categoryRodape" style="background-color: rgb(255, 255, 255); color: black;" >
-            <h4 >{{inves.category}}</h4>
+          <div 
+          *ngIf="inves.status === 'Close'" 
+          class="categoryRodape" 
+          style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" >
+            {{inves.consortium.consortium_name}}
           </div>
         </mat-card>
       </div>
   </div>   
 </section>
+
+

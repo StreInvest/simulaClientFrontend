@@ -25,5 +25,12 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  " compilerOptions " : {
+    " plugins " : [
+     {
+       " name " : " typescript-tslint-plugin "
+     }
+   ]
+ }
 }

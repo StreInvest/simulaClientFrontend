@@ -1,0 +1,84 @@
+<h1>Visualizar</h1>
+
+<div class="linformativo">
+  <div class="container">
+    <h5>Risco</h5>
+    <div>
+      <span>
+        Baixo Risco
+        <i style="background-color: green; color: green;" >....</i>
+      </span>
+      <span>
+        Médio Risco
+        <i  style="background-color: yellow; color: yellow;" >....</i>
+      </span>
+      <span>
+        Alto Risco
+        <i style="background-color: red; color: red;" >....</i>
+      </span>
+    </div>
+  </div>
+  <div class="container">
+    <h5>Status</h5>
+    <div>
+      <span>
+        Fechado
+        <i style="background-color: rgb(2, 2, 2); color: rgb(0, 0, 0);" >....</i>
+      </span>
+      <span>
+        Aberto
+        <i  style="background-color: rgb(255, 255, 255); color: rgb(255, 255, 255);" >....</i>
+      </span>
+    </div>
+  </div>
+</div>
+
+
+
+<section class="tecnologia">
+  <div class="box-linguagem ">
+      <div class="box-linguagem-icon">
+        <mat-card class="box-flex-icon mat-elevation-z2">
+          <div>
+            <div *ngIf="risco === 'Safe'" class="category" style="background-color: green;" >
+              <h4 >{{cat}}</h4>
+            </div>
+            <div *ngIf="risco === 'Moderate'" class="category" style="background-color: yellow;" >
+              <h4 >{{cat}}</h4>
+            </div>
+            <div *ngIf="risco === 'Severe'" class="category" style="background-color: red;">
+              <h4 >{{cat}}</h4>
+            </div>
+            <mat-card-header class="header-mat mat-elevation-z2 elevation-z8">
+              <h2 >{{invest}}</h2>
+            </mat-card-header>
+            <div class="bodyCard">
+              <h4 >Dia: {{dia}}</h4>
+              <h4 >Mes: {{mes}}</h4>
+              <h4 >Ano: {{ano}}</h4>
+              <h4 >minimo de investimento: {{minimo}}</h4>
+              <h4 >Rate: {{rate}}</h4>
+              <h4> data da ultima atualização: {{dataBr}} </h4>
+            </div>
+          </div>
+          
+          <div 
+            *ngIf="status === 'Open'" 
+            class="categoryRodape" 
+            style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" 
+          >
+            {{consu}}
+          </div>
+          <div 
+            *ngIf="status === 'Close'" 
+            class="categoryRodape" 
+            style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" 
+          >
+            {{consu}}
+          </div>
+        </mat-card>
+      </div>
+  </div>   
+</section>
+
+

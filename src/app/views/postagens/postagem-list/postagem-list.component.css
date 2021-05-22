@@ -27,6 +27,11 @@
   margin: 10px;
   /* border-bottom: 10px solid #313131; */
 }
+.box-flex-icon:hover {
+ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ opacity: 0.7;
+ cursor: pointer;
+}
 .projetos{
   width: 100%;
   background-color: #0c0c0c;

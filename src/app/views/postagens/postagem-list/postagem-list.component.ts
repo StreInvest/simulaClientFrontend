@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Postagem } from 'src/app/models/postagem.model';
 import { PostagemService } from 'src/app/services/postagem.service';
+import FormateDateBr from '../../../funcoes/formateDateBr';
+
 
 @Component({
   selector: 'app-postagem-list',
@@ -9,27 +10,31 @@ import { PostagemService } from 'src/app/services/postagem.service';
 })
 export class PostagemListComponent implements OnInit {
 
-  postagens: Array<any> = []
-  pagination: object = {}
-  risco: string = ''
+  postagens: Array<any> = [];
+  pagination: object = {};
+  risco = '';
+
+  page = 1;
+  limit = 10;
+  consortium = 'all';
+  order = 'asc';
+  category = 'all';
 
   constructor(private service: PostagemService) { }
 
   ngOnInit(): void {
-    this.listarTodos()
+    this.listarTodos(this.page, this.limit, this.consortium, this.order, this.category);
   }
 
-  listarTodos() {
-    this.service.listarTodos().subscribe((data: any) => {
-    
-      this.postagens = data.response
-      this.pagination = data.paginate
-      
-
+  // tslint:disable-next-line: typedef
+  listarTodos(page: number, limit: number, consortium: string, order: string, category: string) {
+    this.service.listarTodos(page, limit, consortium, order, category).subscribe((data: any) => {
+      this.postagens = data.response;
+      this.pagination = data.paginate;
     },
       (error) => {
-        this.service.show("Error dados não encontrado!")
-      })
+        this.service.show('Error dados não encontrado!');
+      });
   }
 
 }
