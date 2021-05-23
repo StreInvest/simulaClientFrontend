@@ -1,37 +1,63 @@
 <h1>Todos os investimentos</h1>
 
-<div class="linformativo">
-  <div class="container">
-    <h5>Risco</h5>
-    <div>
-      <span>
-        Baixo Risco
-        <i style="background-color: green; color: green;" >....</i>
-      </span>
-      <span>
-        Médio Risco
-        <i  style="background-color: yellow; color: yellow;" >....</i>
-      </span>
-      <span>
-        Alto Risco
-        <i style="background-color: red; color: red;" >....</i>
-      </span>
+<div class="indicativo">
+  <div class="linformativo">
+    <div class="container">
+      <h5>Risco</h5>
+      <div>
+        <span>
+          Baixo Risco
+          <i style="background-color: green; color: green;" >....</i>
+        </span>
+        <span>
+          Médio Risco
+          <i  style="background-color: yellow; color: yellow;" >....</i>
+        </span>
+        <span>
+          Alto Risco
+          <i style="background-color: red; color: red;" >....</i>
+        </span>
+      </div>
     </div>
-  </div>
-  <div class="container">
-    <h5>Status</h5>
-    <div>
-      <span>
-        Fechado
-        <i style="background-color: rgb(2, 2, 2); color: rgb(0, 0, 0);" >....</i>
-      </span>
-      <span>
-        Aberto
-        <i  style="background-color: rgb(255, 255, 255); color: rgb(255, 255, 255);" >....</i>
-      </span>
+    <div class="container">
+      <h5>Status</h5>
+      <div>
+        <span>
+          Fechado
+          <i style="background-color: rgb(2, 2, 2); color: rgb(0, 0, 0);" >....</i>
+        </span>
+        <span>
+          Aberto
+          <i  style="background-color: rgb(255, 255, 255); color: rgb(255, 255, 255);" >....</i>
+        </span>
+      </div>
     </div>
+  
   </div>
+  <div class="input">
+    <div class="search">
+      <h2>Categoria</h2>
+      <div>
+        <input type="search" placeholder="EX: CDB" name="category" id="category">
+        <button id="sub" type="submit">></button>
+      </div>
+    </div>
+  <!-- select -->
+  <div class="div-select">
+    <h2>consorcio</h2>   
+    <select id="appearance-select">   
+      <option>Selecione</option>   
+      <option>Primeira opção</option>   
+      <option>Segunda opção</option>  
+      <option>Terceira opção</option>   
+      <option>Quarta opção</option>
+    </select> 
+  </div>
+  <!-- fim select -->
+  </div>
+
 </div>
+
 
 
 
@@ -53,14 +79,19 @@
               <h2 >{{inves.investment_name}}</h2>
             </mat-card-header>
             <div class="bodyCard">
-              <h4 >Dia: {{inves.profitability.day}}</h4>
-              <h4 >Mes: {{inves.profitability.month}}</h4>
-              <h4 >Ano: {{inves.profitability.year}}</h4>
-              <h4 >minimo valor de investimento: {{inves.profitability.minimum_value}}</h4>
-              <h4>
-                data da ultima atualização: 
-                {{inves.updated_at.slice(0,10).split('-').reverse().join('/')+" às "+inves.updated_at.slice(11,19)}}
-              </h4>
+              <div class="rent_dia">
+                <h4>Rentabilidade diaria</h4>
+                <h6>
+                 R$ {{inves.profitability.day}}
+                </h6>
+              </div>
+              <span >Valor minimo: R$ {{inves.profitability.minimum_value}}</span>
+              <div class="atualiza">
+                <span class="atualiza_title">Última atualização:</span>
+                <span class="atualiza_value">
+                  {{inves.updated_at.slice(0,10).split('-').reverse().join('/')+" às "+inves.updated_at.slice(11,19)}}
+                </span>
+              </div>
             </div>
           </div>
           

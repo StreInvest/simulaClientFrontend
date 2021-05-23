@@ -28,10 +28,8 @@ export class PostagemService {
    });
   }
 
-  //&consortium=${consortium}&category=${category}
-
   listarTodos(page = 1, limit = 10, consortium = 'all', order = 'asc', category = 'all'): Observable<[]> {
-    return this.http.get<[]>(`${this.url}?page=${page}&limit=${limit}&order=${order}`);
+    return this.http.get<[]>(`${this.url}?page=${page}&limit=${limit}&order=${order}&consortium=${consortium}&category=${category}`);
   }
   listarTodosConsortium(): Observable<[]> {
     return this.http.get<[]>(this.url_c);

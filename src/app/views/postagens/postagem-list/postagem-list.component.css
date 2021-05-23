@@ -125,3 +125,75 @@ i{
 .bodyCard{
   padding: 0 5px;
 }
+.atualiza{
+  font-size: 10px;
+  margin-top: 10px;
+}
+.atualiza .atualiza_title{
+  font-weight: 500;
+}
+.atualiza .atualiza_value{
+  color: #011;
+}
+.rent_dia{
+  padding: 5px;
+  margin: 5px 0;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+.rent_dia h4{
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  font-weight: 500;
+}
+.rent_dia h6{
+  margin: 20px 0;
+  font-size: 50px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-weight: 500;
+}
+#appearance-select{
+  appearance: none;
+  background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #fffdfd ;
+  background-position: 218px center;
+  width: 250px;
+  height:30px;
+  border:1px solid #ddd;
+  border-radius: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  padding: 5px;
+}
+.indicativo{
+  display: flex;
+  justify-content: space-between;
+}
+.div-select h2{
+  text-align: left;
+  margin-left: 10px;
+}
+.input{
+  display: flex;
+  justify-content: left;
+}
+#category{
+  padding: 5px;
+  border:1px solid #ddd;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#sub{
+  padding: 5px;
+  border-radius: 0;
+  border:1px solid #ddd;
+  background-color: rgb(252, 9, 41);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #fff;
+}
+#sub:hover{
+  cursor: pointer;
+  opacity: 0.7;
+}

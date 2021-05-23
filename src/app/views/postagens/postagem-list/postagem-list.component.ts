@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostagemService } from 'src/app/services/postagem.service';
-import FormateDateBr from '../../../funcoes/formateDateBr';
+import {FormControl, Validators} from '@angular/forms';
 
 
 @Component({
