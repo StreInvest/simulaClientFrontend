@@ -19,6 +19,7 @@ export class PostagemListComponent implements OnInit {
   consortium = 'all';
   order = 'asc';
   category = 'all';
+  isLoading = false;
 
   constructor(private service: PostagemService) { }
 
@@ -28,9 +29,12 @@ export class PostagemListComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   listarTodos(page: number, limit: number, consortium: string, order: string, category: string) {
+    this.isLoading = true;
     this.service.listarTodos(page, limit, consortium, order, category).subscribe((data: any) => {
       this.postagens = data.response;
       this.pagination = data.paginate;
+      this.isLoading = false;
+
     },
       (error) => {
         this.service.show('Error dados não encontrado!');

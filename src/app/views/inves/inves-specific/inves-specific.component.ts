@@ -24,6 +24,8 @@ export class InvesSpecificComponent implements OnInit {
 
   public userId = '';
 
+  isLoading = false;
+
   constructor(private api: PostagemService, private route: ActivatedRoute, private router: Router) {
     this.route.params.subscribe(params => this.userId = params.id);
   }
@@ -34,6 +36,7 @@ export class InvesSpecificComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   listarEspecifico(userId: string){
+    this.isLoading = true;
     this.api.listarEspecifico(userId).subscribe((data: any) => {
       this.dia = data.response.profitability.day;
       this.mes = data.response.profitability.month;
@@ -46,6 +49,7 @@ export class InvesSpecificComponent implements OnInit {
       this.consu = data.response.consortium.consortium_name;
       this.risco = data.response.risk;
       this.status = data.response.status;
+      this.isLoading = false;
     }, (error) => {
       this.api.show('Error, dados não encontrado!');
     });

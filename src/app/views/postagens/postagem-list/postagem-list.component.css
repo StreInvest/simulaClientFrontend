@@ -197,3 +197,12 @@ i{
   cursor: pointer;
   opacity: 0.7;
 }
+.central{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.contain-spinner{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
