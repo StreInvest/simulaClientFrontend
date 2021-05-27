@@ -36,6 +36,17 @@
 
   <div class="input">
     <div class="search">
+      <h2>Ordernação</h2>
+      <div>
+        <button (click)="ascbrabo()" type="submit">Último ao Primeito</button>
+        <br>
+        <button (click)="descbrabo()" type="submit">Primeiro ao Último</button>
+      </div>
+    </div>
+  </div> 
+
+  <div class="input">
+    <div class="search">
       <h2>Categoria</h2>
       <div>
         <input type="search" #box1 placeholder="EX: CDB" name="category" id="category">
@@ -128,4 +139,8 @@
   </div>   
 </section>
 
-
+<div class="paginate">
+<button (click)="pageDown()" type="submit">Anterior</button>
+  <h2>{{currentPage}}</h2>
+<button  (click)="pageUp()" type="submit">Proxima</button>
+</div>

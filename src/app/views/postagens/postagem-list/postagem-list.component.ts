@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PostagemService } from 'src/app/services/postagem.service';
-import {FormControl, Validators} from '@angular/forms';
-
 
 @Component({
   selector: 'app-postagem-list',
@@ -13,6 +11,7 @@ export class PostagemListComponent implements OnInit {
   postagens: Array<any> = [];
   consortiun: Array<any> = [];
   pagination: object = {};
+  currentPage: any;
   risco = '';
 
   page = 1;
@@ -34,8 +33,8 @@ export class PostagemListComponent implements OnInit {
     this.service.listarTodos(page, limit, consortium, order, category).subscribe((data: any) => {
       this.postagens = data.response;
       this.pagination = data.paginate;
+      this.currentPage = data.paginate.page
       this.isLoading = false;
-
     },
     (error) => {
         this.service.show('Error dados não encontrado!');
@@ -50,5 +49,21 @@ export class PostagemListComponent implements OnInit {
   // tslint:disable-next-line: typedef
   pegaCat(categ: any){
     this.listarTodos(this.page, this.limit, this.consortium, this.order, categ);
+  }
+  // tslint:disable-next-line: typedef
+  ascbrabo(){
+    this.listarTodos(this.page, this.limit, this.consortium, 'asc', this.category);
+  }
+  // tslint:disable-next-line: typedef
+  descbrabo(){
+    this.listarTodos(this.page, this.limit, this.consortium, 'desc', this.category);
+  }
+  // tslint:disable-next-line: typedef
+  pageUp(){
+    this.listarTodos(this.page = this.page + 1, this.limit, this.consortium, 'asc', this.category);
+  }
+  // tslint:disable-next-line: typedef
+  pageDown(){
+    this.listarTodos(this.page = this.page - 1, this.limit, this.consortium, 'asc', this.category);
   }
 }

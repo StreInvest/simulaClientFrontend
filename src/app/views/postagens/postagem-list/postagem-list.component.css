@@ -9,6 +9,7 @@
 .tecnologia{
   width: 100%;
   overflow: hidden;
+  margin-top: 100px;
 }
 .box-linguagem{
   width: 100%;
@@ -216,4 +217,14 @@ i{
 input:focus {
   box-shadow: 0 0 0 0;
   outline: 0;
+}
+.paginate{
+  display: flex;
+  justify-content: center;
+}
+.paginate{
+  margin-top: 30px;
+}
+.paginate h2 {
+  margin: 0 10px;
 }
