@@ -11,6 +11,7 @@ import {FormControl, Validators} from '@angular/forms';
 export class PostagemListComponent implements OnInit {
 
   postagens: Array<any> = [];
+  consortiun: Array<any> = [];
   pagination: object = {};
   risco = '';
 
@@ -36,9 +37,18 @@ export class PostagemListComponent implements OnInit {
       this.isLoading = false;
 
     },
-      (error) => {
+    (error) => {
         this.service.show('Error dados não encontrado!');
-      });
+    });
   }
 
+
+  // tslint:disable-next-line: typedef
+  pegaConsorcio(consor: any){
+    this.listarTodos(this.page, this.limit, consor, this.order, this.category);
+  }
+  // tslint:disable-next-line: typedef
+  pegaCat(categ: any){
+    this.listarTodos(this.page, this.limit, this.consortium, this.order, categ);
+  }
 }

@@ -32,30 +32,41 @@
         </span>
       </div>
     </div>
-  
   </div>
+
   <div class="input">
     <div class="search">
       <h2>Categoria</h2>
       <div>
-        <input type="search" placeholder="EX: CDB" name="category" id="category">
-        <button id="sub" type="submit">></button>
+        <input type="search" #box1 placeholder="EX: CDB" name="category" id="category">
+        <button id="sub"  (click)="pegaCat(box1.value)" type="submit">
+          <i 
+            style="color: rgb(255, 255, 255); background-color: rgba(253, 253, 253, 0);" 
+            class="material-icons"
+          >
+            search
+          </i>
+        </button>
       </div>
     </div>
-  <!-- select -->
-  <div class="div-select">
-    <h2>consorcio</h2>   
-    <select id="appearance-select">   
-      <option>Selecione</option>   
-      <option>Primeira opção</option>   
-      <option>Segunda opção</option>  
-      <option>Terceira opção</option>   
-      <option>Quarta opção</option>
-    </select> 
-  </div>
-  <!-- fim select -->
-  </div>
 
+    <div class="input">
+      <div class="search">
+        <h2>Consócios</h2>
+        <div>
+          <input type="search" #box2 placeholder="EX: Banco ..." name="consortium" id="consortium">
+          <button (click)="pegaConsorcio(box2.value)" id="sub" type="submit">
+            <i 
+            style="color: rgb(255, 255, 255); background-color: rgba(253, 253, 253, 0);" 
+            class="material-icons"
+          >
+            search
+          </i>
+          </button>
+        </div>
+      </div>
+    </div> 
+  </div>
 </div>
 
 <div class="central" >
