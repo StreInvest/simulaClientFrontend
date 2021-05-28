@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatTableModule} from '@angular/material/table';
 
 
 import { HeaderComponent } from './views/components/template/header/header.component';
@@ -24,6 +25,7 @@ import { NavComponent } from './views/components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { PostagemListComponent } from './views/postagens/postagem-list/postagem-list.component';
 import { InvesSpecificComponent } from './views/inves/inves-specific/inves-specific.component';
+import { ConsortiumComponent } from './views/inves/consortium/consortium.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { InvesSpecificComponent } from './views/inves/inves-specific/inves-speci
     NavComponent,
     HomeComponent,
     PostagemListComponent,
-    InvesSpecificComponent
+    InvesSpecificComponent,
+    ConsortiumComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { InvesSpecificComponent } from './views/inves/inves-specific/inves-speci
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

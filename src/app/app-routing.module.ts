@@ -4,12 +4,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
 import { PostagemListComponent } from './views/postagens/postagem-list/postagem-list.component';
 import { InvesSpecificComponent } from './views/inves/inves-specific/inves-specific.component';
+import { ConsortiumComponent } from './views/inves/consortium/consortium.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'investimentos', component: PostagemListComponent},
-  {path: 'visualizar/:id', component: InvesSpecificComponent}
+  {path: 'visualizar/:id', component: InvesSpecificComponent},
+  {path: 'consorcios', component: ConsortiumComponent}
 ];
 
 @NgModule({
