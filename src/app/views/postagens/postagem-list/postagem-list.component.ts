@@ -17,7 +17,7 @@ export class PostagemListComponent implements OnInit {
   page = 1;
   limit = 10;
   consortium = 'all';
-  order = 'asc';
+  order = 'desc';
   category = 'all';
   isLoading = false;
 
@@ -33,7 +33,7 @@ export class PostagemListComponent implements OnInit {
     this.service.listarTodos(page, limit, consortium, order, category).subscribe((data: any) => {
       this.postagens = data.response;
       this.pagination = data.paginate;
-      this.currentPage = data.paginate.page
+      this.currentPage = data.paginate.page;
       this.isLoading = false;
     },
     (error) => {

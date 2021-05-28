@@ -38,9 +38,9 @@
     <div class="search">
       <h2>Ordernação</h2>
       <div>
-        <button (click)="ascbrabo()" type="submit">Último ao Primeito</button>
+        <button (click)="ascbrabo()" type="submit">ASC</button>
         <br>
-        <button (click)="descbrabo()" type="submit">Primeiro ao Último</button>
+        <button (click)="descbrabo()" type="submit">DESC</button>
       </div>
     </div>
   </div> 
@@ -95,7 +95,7 @@
             <div *ngIf="inves.risk === 'Safe'" class="category" style="background-color: green;" >
               <h4 >{{inves.category}}</h4>
             </div>
-            <div *ngIf="inves.risk === 'Moderate'" class="category" style="background-color: yellow;" >
+            <div *ngIf="inves.risk === 'Moderate'" class="category" style="background-color: yellow; color: black;" >
               <h4 >{{inves.category}}</h4>
             </div>
             <div *ngIf="inves.risk === 'Severe'" class="category" style="background-color: red;">
@@ -106,9 +106,9 @@
             </mat-card-header>
             <div class="bodyCard">
               <div class="rent_dia">
-                <h4>Rentabilidade diaria</h4>
+                <h4>Rentabilidade anual</h4>
                 <h6>
-                 R$ {{inves.profitability.day}}
+                 R$ {{inves.profitability.year}}
                 </h6>
               </div>
               <span >Valor minimo: R$ {{inves.profitability.minimum_value}}</span>
