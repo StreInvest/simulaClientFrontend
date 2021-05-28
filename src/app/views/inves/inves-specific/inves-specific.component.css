@@ -94,7 +94,7 @@
   
   .linformativo{
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
     gap: 10px;
   }
   .container{

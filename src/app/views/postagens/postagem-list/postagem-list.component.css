@@ -82,7 +82,7 @@ h2{
 .header-mat{
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
 }
 .header-mat h2 {
   margin: 0;
@@ -177,7 +177,7 @@ i{
 }
 .input{
   display: flex;
-  justify-content: left;
+  justify-content: flex-start;
   margin-left: 20px;
 }
 #category{
