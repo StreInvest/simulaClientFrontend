@@ -45,11 +45,11 @@ export class ConsortiumComponent implements OnInit {
   }
   // tslint:disable-next-line: typedef
   pageUp(){
-    this.listarTodosConsortium(this.registerPage < 10 ? this.page = this.page : this.page + 1);
+    this.listarTodosConsortium(this.page = this.page + 1);
   }
   // tslint:disable-next-line: typedef
   pageDown(){
-    this.listarTodosConsortium(this.page > 2 ? this.page - 1 : this.page = 1);
+    this.listarTodosConsortium(this.page =  this.page - 1);
   }
 
 }

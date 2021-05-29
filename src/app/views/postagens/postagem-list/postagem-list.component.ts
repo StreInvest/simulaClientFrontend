@@ -73,10 +73,10 @@ export class PostagemListComponent implements OnInit {
   }
   // tslint:disable-next-line: typedef
   pageUp(){
-    this.listarTodos(this.registerPage < 10 ? this.page + this.page : this.page + 1, this.limit, this.consortium, 'asc', this.category);
+    this.listarTodos(this.page = this.page + 1, this.limit, this.consortium, 'asc', this.category);
   }
   // tslint:disable-next-line: typedef
   pageDown(){
-    this.listarTodos(this.page > 1 ? this.page - 1 : this.page = 1, this.limit, this.consortium, 'asc', this.category);
+    this.listarTodos(this.page = this.page - 1, this.limit, this.consortium, 'asc', this.category);
   }
 }
