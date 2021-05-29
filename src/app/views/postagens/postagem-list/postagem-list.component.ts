@@ -49,7 +49,7 @@ export class PostagemListComponent implements OnInit {
       });
       this.postagens = datdosConvertidos;
     },
-    (error) => {
+    (error: any) => {
         this.service.show('Error dados não encontrado!');
     });
   }
