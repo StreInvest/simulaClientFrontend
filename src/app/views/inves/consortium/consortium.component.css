@@ -16,6 +16,19 @@
 .contain-spinner{
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-table {
+#tabela{
+  background-color: #fff;
   width: 100%;
+ 
+}
+#tabela, tr, td, th {
+  border-collapse: separate;
+  border-spacing: 3px;
+  color: black;
+}
+.left{
+  text-align: left;
+}
+td, th {
+  padding: 10px;
 }

@@ -31,8 +31,8 @@ export class PostagemService {
   listarTodos(page = 1, limit = 10, consortium = 'all', order = 'asc', category = 'all'): Observable<[]> {
     return this.http.get<[]>(`${this.url}?page=${page}&limit=${limit}&order=${order}&consortium=${consortium}&category=${category}`);
   }
-  listarTodosConsortium(): Observable<[]> {
-    return this.http.get<[]>(this.url_c);
+  listarTodosConsortium(page = 1): Observable<[]> {
+    return this.http.get<[]>(`${this.url_c}?page=${page}`);
   }
   listarEspecifico(id: string): Observable<any> {
     return this.http.get<[]>(`${this.url_especifico}/${id}`);

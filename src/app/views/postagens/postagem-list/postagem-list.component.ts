@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostagemService } from 'src/app/services/postagem.service';
+import FormateDateBr from '../../../funcoes/formateDateBr'
 
 @Component({
   selector: 'app-postagem-list',
@@ -20,6 +21,7 @@ export class PostagemListComponent implements OnInit {
   order = 'desc';
   category = 'all';
   isLoading = false;
+  registerPage: any;
 
   constructor(private service: PostagemService) { }
 
@@ -31,10 +33,21 @@ export class PostagemListComponent implements OnInit {
   listarTodos(page: number, limit: number, consortium: string, order: string, category: string) {
     this.isLoading = true;
     this.service.listarTodos(page, limit, consortium, order, category).subscribe((data: any) => {
-      this.postagens = data.response;
       this.pagination = data.paginate;
       this.currentPage = data.paginate.page;
+      this.registerPage = data.paginate.totalCurrentPage;;
       this.isLoading = false;
+
+      const datdosConvertidos = data.response.map((item: any, i: any) => {
+        const teste1 = FormateDateBr(item.created_at);
+        const teste2 = FormateDateBr(item.updated_at);
+        return {
+          ...item,
+          created_at: teste1,
+          updated_at: teste2
+        };
+      });
+      this.postagens = datdosConvertidos;
     },
     (error) => {
         this.service.show('Error dados não encontrado!');
@@ -60,10 +73,10 @@ export class PostagemListComponent implements OnInit {
   }
   // tslint:disable-next-line: typedef
   pageUp(){
-    this.listarTodos(this.page = this.page + 1, this.limit, this.consortium, 'asc', this.category);
+    this.listarTodos(this.registerPage < 10 ? this.page + this.page : this.page + 1, this.limit, this.consortium, 'asc', this.category);
   }
   // tslint:disable-next-line: typedef
   pageDown(){
-    this.listarTodos(this.page = this.page - 1, this.limit, this.consortium, 'asc', this.category);
+    this.listarTodos(this.page > 1 ? this.page - 1 : this.page = 1, this.limit, this.consortium, 'asc', this.category);
   }
 }

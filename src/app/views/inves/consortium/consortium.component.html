@@ -6,17 +6,38 @@
 </div>
 
 
-<table>
-  
+<table class="mat-elevation-z8" id="tabela">
+  <!-- <caption>bom de mais</caption> -->
+  <thead class="mat-elevation-z2">
+    <tr>
+      <th colspan="5" >Tabla de todos os emissores de investimentos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="left">
+      <!-- colspan="2"  -->
+      <th>#</th> 
+      <th>Emissores de investimentos</th>
+      <th>Data de criação</th>
+      <th >Data de atualizacao</th>
+    </tr>
+    <!-- rowspan="2" -->
+    <tr *ngFor="let consorcio of dataMeu">
+      <td>{{consorcio['index']}}</td>
+      <td>{{consorcio['consortium_name']}}</td>
+      <td>{{consorcio['created_at']}}</td>
+      <td>{{consorcio['updated_at']}}</td>
+    </tr>
+  </tbody>
 </table>
 
 
 
 
-<!-- <div class="paginate">
+<div class="paginate">
   <button (click)="pageDown()" type="submit">Anterior</button>
     <h2>{{currentPage}}</h2>
   <button  (click)="pageUp()" type="submit">Proxima</button>
-</div> -->
+</div>
 
 
